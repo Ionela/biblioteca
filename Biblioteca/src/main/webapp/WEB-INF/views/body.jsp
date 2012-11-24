@@ -95,6 +95,8 @@
 	</div>
 
 	<c:if test="${authenticated == 'true'}">
-		<div id="extra"></div>
+		<div id="extra">
+			${user.drepturi}
+		</div>
 	</c:if>
 </div>

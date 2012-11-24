@@ -16,7 +16,7 @@
 	<!-- The controller beans are defined automatically for @Controller annotated classes -->
 	<mvc:annotation-driven />
 		
-	<!-- the location where to search for Controllers (Controllers are a specialisation of component) -->
+	<!-- the location where to search for Controllers (Controllers are a specialization of Component) -->
 	<context:component-scan base-package="ro.ubbcluj.cs.Biblioteca.controllers" />
 
 	<!-- View Resolver -->
@@ -25,6 +25,7 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 
-	<!-- Service -->
-	<!-- bean class="com.hp.oo.contentUtility.service.ApplicationService" / -->
+	<!-- Services -->
+	<bean class="ro.ubbcluj.cs.Biblioteca.services.impl.CarteServiceImpl" />
+	<bean class="ro.ubbcluj.cs.Biblioteca.services.impl.UserServiceImpl" />
 </beans>

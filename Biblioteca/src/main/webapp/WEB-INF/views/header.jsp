@@ -14,16 +14,16 @@
 	<div id="right-header">
 		<div id="authentication-header">
 			<c:if test="${authenticated == 'false'}">
-				<form action="/logIn" method="post">
-					<input type="text" id="userName"/>
-					<input type="password" id="password"/>
+				<form action="/Biblioteca/users/logIn" method="POST">
+					<input type="text" id="userName" name="userName"/>
+					<input type="password" id="password" name="password"/>
 					<input type="submit" value="Log In" id="logIn">
 				</form>
 			</c:if>
 
 			<c:if test="${authenticated == 'true'}">
-				<div id="numeUtilizator">Lungociu Corneliu</div>
-				<form action="/logOut">
+				<div id="numeUtilizator">${user.nume}</div>
+				<form action="/Biblioteca/users/logOut" method="POST">
 					<input type="submit" value="Log Out" id="logOut">
 				</form>
 			</c:if>
