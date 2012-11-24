@@ -1,0 +1,24 @@
+1. Specificatii Functionale
+	- save as PDF / Excell. ???
+
+2. Wire Frame design
+
+
+3. Architecture Diagram
+	- SOA: Service Oriented Architecture
+
+4. Class Diagram
+
+
+5. Database Diagram
+
+
+6. Technologies
+	JSP + html + css + jQuery
+	Spring MVC
+	Hibernate + Spring ??
+	MySql
+	Jasper Reports ???
+
+
+7. Implementation
