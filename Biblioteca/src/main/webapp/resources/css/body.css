@@ -1,0 +1,50 @@
+@CHARSET "ISO-8859-1";
+
+#body{
+	width: 1280 px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 700 px;
+	border: 1px solid black;
+}
+
+#filters{
+	margin-top: 50 px;
+	margin-bottom: 5 px; 
+	margin-left: auto;
+	margin-right: auto;
+	width: 1000 px;
+	height: 30 px;
+	border: 1px solid black;
+}
+
+#divTableCarti{
+	height: 300 px;
+	width: 1000 px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#controll{
+	width: 1000 px;
+	height: 30 px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5 px;
+	border: 1px solid black;
+}
+
+#extra{
+	width: 1000 px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#tabelCarti{
+	width: 1000 px;
+	border-collapse: collapse;
+}
+
+th, td {
+	border: 1px solid black;
+}

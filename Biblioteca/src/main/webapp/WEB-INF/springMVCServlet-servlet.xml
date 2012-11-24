@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+	
+	<!-- Defines a handler mapping for static resources -->
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<!-- The controller beans are defined automatically for @Controller annotated classes -->
+	<mvc:annotation-driven />
+		
+	<!-- the location where to search for Controllers (Controllers are a specialisation of component) -->
+	<context:component-scan base-package="ro.ubbcluj.cs.Biblioteca.controllers" />
+
+	<!-- View Resolver -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<!-- Service -->
+	<!-- bean class="com.hp.oo.contentUtility.service.ApplicationService" / -->
+</beans>
