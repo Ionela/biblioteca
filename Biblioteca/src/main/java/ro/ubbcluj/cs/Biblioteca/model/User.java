@@ -1,8 +1,9 @@
 package ro.ubbcluj.cs.Biblioteca.model;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class User {
+public class User implements Serializable{
 	private int idUser;
 	private String username;
 	private String password;

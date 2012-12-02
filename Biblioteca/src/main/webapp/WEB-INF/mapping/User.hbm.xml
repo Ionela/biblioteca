@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="ro.ubbcluj.cs.Biblioteca.model.User" table="Useri">
+        <id name="idUser" type="int">
+            <column name="idUser" precision="5" scale="0" />
+            <generator class="assigned" />
+        </id>
+        
+        <property name="username" type="string">
+            <column name="username" length="45" not-null="true" unique="true"/>
+        </property>
+        
+        <property name="password" type="string">
+            <column name="password" length="45" not-null="true" />
+        </property>
+        
+        <property name="nume" type="string">
+            <column name="nume" length="50" />
+        </property>
+
+        <property name="email" type="string">
+            <column name="email" length="45" />
+        </property>
+        
+        <property name="telefon" type="string">
+            <column name="telefon" length="45" />
+        </property>
+        
+        <property name="adresa" type="string">
+            <column name="adresa" length="100" />
+        </property>
+        
+        <property name="drepturi" type="int">
+            <column name="drepturi" default="0"/>
+        </property>
+    </class>
+</hibernate-mapping>
