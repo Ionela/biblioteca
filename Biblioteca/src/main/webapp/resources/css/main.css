@@ -7,10 +7,14 @@ div {
 #wrapper{
 	margin-left: auto;
 	margin-right: auto;
-	width: 1290 px;
 }
 
-#clearFloat{
+.clearFloat{
 	clear: both;
 	display: none;
+}
+
+body{
+	margin: 0px;
+	margin-top: 8px;
 }

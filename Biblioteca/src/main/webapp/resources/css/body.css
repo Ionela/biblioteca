@@ -1,22 +1,74 @@
 @CHARSET "ISO-8859-1";
 
 #body{
-	width: 1280 px;
+	width: 1200 px;
 	margin-left: auto;
 	margin-right: auto;
-	height: 700 px;
+	/*height: 700 px;*/
 	border: 1px solid black;
+	padding-top: 15px;
+}
+
+/*	FILTERS	*/
+
+#export-pdf{
+	width: 1000 px;
+	height: 30 px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 25px;
+}
+
+#export-pdf>img{
+	float: right;
 }
 
 #filters{
-	margin-top: 50 px;
+	/*margin-top: 50 px;*/
 	margin-bottom: 5 px; 
 	margin-left: auto;
 	margin-right: auto;
 	width: 1000 px;
 	height: 30 px;
-	border: 1px solid black;
+	/*border: 1px solid black;*/
+	
+	
 }
+
+#filters>div{
+	float: left;
+	/*border: 1px solid black;*/
+	border-right: 1px solid black;
+	width: 199 px;
+	height: 30 px;
+}
+
+#filters>div>img{
+	float: right;
+	margin-right: 5px;
+}
+
+#filter-titlu{
+	
+}
+
+#filter-autori{
+	
+}
+
+#filter-an{
+	
+}
+
+#filter-editura{
+	
+}
+
+#filter-disponibil{
+	
+}
+
+/*	TABEL CARTI */
 
 #divTableCarti{
 	height: 300 px;
@@ -25,28 +77,63 @@
 	margin-right: auto;
 }
 
-#controll{
-	width: 1000 px;
-	height: 30 px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 5 px;
-	border: 1px solid black;
-}
-
-#extra{
-	width: 1000 px;
-	height: 200 px;
-	margin-left: auto;
-	margin-right: auto;
-	border: 1px solid black;
-}
-
 #tabelCarti{
 	width: 1000 px;
+}
+
+table{
 	border-collapse: collapse;
 }
 
 th, td {
 	border: 1px solid black;
 }
+
+th {
+	background-color: #ddddff;	
+}
+
+#tabelCarti>thead>tr>th{
+	width: 197px;
+}
+
+
+/*	NEXT / PREVIOUS PAGE */
+#controll{
+	width: 1000 px;
+	height: 30 px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5 px;
+	/*border: 1px solid black;*/
+}
+
+#controll>div{
+	/*border: 1px solid black;*/
+	height: 30 px;
+}
+
+#controll>#previous-page>img{
+	float:left;
+}
+
+#controll>#next-page>img{
+	float:right;
+}
+
+#previous-page{
+	width: 60px;
+	float: left;
+}
+
+#next-page{
+	width: 60px;
+	float:right;	
+}
+
+#pages{
+	text-align: center;
+	float: left;
+	width: 874px;
+}
+

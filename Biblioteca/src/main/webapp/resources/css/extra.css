@@ -1,0 +1,75 @@
+@CHARSET "ISO-8859-1";
+
+#extra{
+	width: 1000 px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#user-info{
+	margin-bottom: 15px;
+}
+
+#user-info{
+	height: 32px;
+}
+
+#user-info>img{
+	float:left;
+}
+
+#user-status{
+	margin-bottom: 5px;	
+}
+
+#extra>hr{
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#select-user{
+	margin-left: 55px;
+	padding-top: 11px;
+}
+
+#user-status{
+	border: 1px solid black;
+	height: 185px;
+	width: 1000px;
+}
+
+#carti-imprumutate{
+	width: 597px;
+	height: 100%;
+	float: left;	
+	padding-left: 5px;
+}
+
+#rezervari{
+	width: 370px;
+	height: 100%;
+	float: right;
+}
+
+#header-imprumut{
+	width: 200px;
+	height: 30px;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+#header-rezervari{
+	width: 200px;
+	height: 30px;
+	padding-top: 10px;	
+	padding-left: 10px;
+}
+
+.head-titlu{
+	width: 200px;
+}
+
+.head-autori{
+	width: 200px;
+}
