@@ -1,8 +1,29 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <div id="extra">
 	<hr>
 	<div id="user-info">
 		<img src="<c:url value='/resources/img/user.png'/>">
-		<div id="select-user">Cartile Mele</div>
+		<input type="hidden" value="${user.idUser}">
+	
+		<c:if test="${user.drepturi == 0}">
+			<div id="select-user">Cartile Mele</div>
+		</c:if>
+		
+		<c:if test="${user.drepturi != 0}">
+			<div id="select-user">
+				<select id="user-drop-down">
+				  <option value="usedId1">User name 1</option>
+				  <option value="usedId2">User name 2</option>
+				  <option value="usedId3">User name 3</option>
+				  <option value="usedId4">User name 4</option>
+				</select>
+				
+				<c:if test="${user.drepturi == 2}">
+					<!-- TODO: Administrator -> butoare pentru CRUD user -->
+				</c:if>
+			</div>
+		</c:if>
 	</div>
 	
 	<div class="clearFloat"></div>

@@ -2,7 +2,11 @@
 
 <div id="body">
 	<div id="export-pdf">
-		<img alt="filter" src="<c:url value='/resources/img/save.png'/>">
+		<c:if test="${user.drepturi == 2}">
+			<img id="import-books-img" alt="import" title="Incarca lista cartilor din fisier" src="<c:url value='/resources/img/import.png'/>" />
+			<img id="add-book-img" alt="add" title="Adauga o carte noua" src="<c:url value='/resources/img/add.png'/>" />
+		</c:if>
+		<img id="export-pdf-img" alt="salveaza" title="Salveaza lista cartilor ca PDF" src="<c:url value='/resources/img/save.png'/>" />
 	</div>
 	
 	<div id="filters">
@@ -118,7 +122,7 @@
 	
 		<div id="controll">
 			<div id="previous-page">
-				<img alt="filter" src="<c:url value='/resources/img/previous.png'/>">
+				<img alt="previous page" title="Pagina anterioara" src="<c:url value='/resources/img/previous.png'/>">
 			</div>
 			
 			<div id="pages">
@@ -126,7 +130,7 @@
 			</div>
 			
 			<div id="next-page">
-				<img alt="next page" src="<c:url value='/resources/img/next.png'/>">
+				<img alt="next page" title="Pagina urmatoare"src="<c:url value='/resources/img/next.png'/>">
 			</div>
 		</div>
 	</div>

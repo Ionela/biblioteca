@@ -19,7 +19,16 @@
 	margin-bottom: 25px;
 }
 
-#export-pdf>img{
+#import-books-img{
+	float: left;
+}
+
+#add-book-img{
+	float: left;
+	margin-left: 10px;
+}
+
+#export-pdf-img{
 	float: right;
 }
 
