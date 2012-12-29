@@ -80,7 +80,7 @@
 /*	TABEL CARTI */
 
 #divTableCarti{
-	height: 300 px;
+	height: 545 px;
 	width: 1000 px;
 	margin-left: auto;
 	margin-right: auto;
@@ -90,20 +90,24 @@
 	width: 1000 px;
 }
 
-table{
-	border-collapse: collapse;
+#main-head-titlu{
+	
 }
 
-th, td {
-	border: 1px solid black;
+#main-head-autori{
+	
 }
 
-th {
-	background-color: #ddddff;	
+#main-head-an{
+	width: 85px;
 }
 
-#tabelCarti>thead>tr>th{
-	width: 197px;
+#main-head-editura{
+	
+}
+
+#main-head-disponibil{
+	width: 80px;	
 }
 
 
@@ -146,3 +150,17 @@ th {
 	width: 874px;
 }
 
+.eticheta-add-carte{
+	width: 220px;
+	float: left;
+}
+
+.input-add-carte{
+	float: left;
+	width: 350px;
+}
+
+.line-add-carte{
+	width: 580px;
+	height: 32px;
+}

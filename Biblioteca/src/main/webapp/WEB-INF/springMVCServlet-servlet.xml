@@ -11,11 +11,11 @@
 	<mvc:resources mapping="/resources/**" location="/resources/" />
 
 	<!-- Enables the Spring MVC @Controller programming model -->
-	<!-- The controller beans are defined automatically for @Controller annotated 
-		classes -->
+	<!-- The controller beans are defined automatically for @Controller annotated classes -->
 	<mvc:annotation-driven />
 
 	<!-- the location where to search for Controllers (Controllers are a specialization of Component) -->
+	<!-- this will find all the controllers and the repositories  -->
 	<context:component-scan base-package="ro.ubbcluj.cs.Biblioteca" />
 
 	<!-- View Resolver -->
@@ -23,6 +23,9 @@
 		<property name="prefix" value="/WEB-INF/views/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+	
+	<!-- Multipart Resolver -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
 
 	<!-- Services -->
 	<bean class="ro.ubbcluj.cs.Biblioteca.services.impl.CarteServiceImpl" />
@@ -35,6 +38,7 @@
 		<property name="mappingResources">
 			<list>
 				<value>../mapping/User.hbm.xml</value>
+				<value>../mapping/Carte.hbm.xml</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">

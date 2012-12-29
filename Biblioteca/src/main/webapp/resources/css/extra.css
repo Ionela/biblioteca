@@ -18,10 +18,6 @@
 	float:left;
 }
 
-#user-status{
-	margin-bottom: 5px;	
-}
-
 #extra>hr{
 	width: 600px;
 	margin-left: auto;
@@ -34,8 +30,9 @@
 }
 
 #user-status{
+	margin-bottom: 5px;	
 	border: 1px solid black;
-	height: 185px;
+	height: 325px;
 	width: 1000px;
 }
 
@@ -66,10 +63,10 @@
 	padding-left: 10px;
 }
 
-.head-titlu{
+.shead-titlu{
 	width: 200px;
 }
 
-.head-autori{
+.shead-autori{
 	width: 200px;
 }

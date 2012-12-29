@@ -8,6 +8,12 @@
 	<link type="text/css" rel="stylesheet"	href="<c:url value="/resources/css/header.css" />" />
 	<link type="text/css" rel="stylesheet"	href="<c:url value="/resources/css/body.css" />" />
 	<link type="text/css" rel="stylesheet"	href="<c:url value="/resources/css/extra.css" />" />
+	
+	<link type="text/css" rel="stylesheet"	href="<c:url value="/resources/css/theme/redmond/jquery-ui-1.9.2.custom.css" />" />
+	
+	<script type="text/javascript" src="<c:url value="/resources/js/jquery/jquery-1.8.3.js" />"></script>
+	<script type="text/javascript" src="<c:url value="/resources/js/jquery/jquery-ui-1.9.2.custom.js" />"></script>
+	<script type="text/javascript" src="<c:url value="/resources/js/body.js" />"></script>
 </head>
 <body>
 	<div id="wrapper">

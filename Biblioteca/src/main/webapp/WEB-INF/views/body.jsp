@@ -10,24 +10,25 @@
 	</div>
 	
 	<div id="filters">
+		<input type="hidden" id="input-filter-page" name="input-filter-page" />
 		<div id="filter-titlu">
-			<input id="input-filter-titlu" type="text" />
+			<input id="input-filter-titlu" type="text" name="input-filter-titlu"/>
 			<img alt="filter" src="<c:url value='/resources/img/filter.png'/>">
 		</div>
 		<div id="filter-autori">
-			<input id="input-filter-autori" type="text" />
+			<input id="input-filter-autori" type="text" name="input-filter-autori"/>
 			<img alt="filter" src="<c:url value='/resources/img/filter.png'/>">
 		</div>
 		<div id="filter-an">
-			<input id="input-filter-an" type="text" />
+			<input id="input-filter-an" type="text" name="input-filter-an"/>
 			<img alt="filter" src="<c:url value='/resources/img/filter.png'/>">
 		</div>
 		<div id="filter-editura">
-			<input id="input-filter-editura" type="text" />
+			<input id="input-filter-editura" type="text" name="input-filter-editura"/>
 			<img alt="filter" src="<c:url value='/resources/img/filter.png'/>">
 		</div>
 		<div id="filter-disponibil">
-			<input id="input-filter-disponibil" type="text" />
+			<input id="input-filter-disponibil" type="text" name="input-filter-disponibil"/>
 			<img alt="filter" src="<c:url value='/resources/img/filter.png'/>">
 		</div>
 		<div class="clearFloat"></div>
@@ -37,11 +38,11 @@
 		<table id="tabelCarti">
 			<thead>
 				<tr>
-					<th>Titlu</th>
-					<th>Autori</th>
-					<th>An Aparitie</th>
-					<th>Editura</th>
-					<th>Disponibil</th>
+					<th id="main-head-titlu">Titlu</th>
+					<th id="main-head-autori">Autori</th>
+					<th id="main-head-an">An Aparitie</th>
+					<th id="main-head-editura">Editura</th>
+					<th id="main-head-disponibil">Disponibil</th>
 				</tr>
 			</thead>
 
@@ -138,4 +139,54 @@
 	<c:if test="${authenticated == 'true'}">
 		<%@include file="extra.jsp"%>
 	</c:if>
+</div>
+
+<div id="dialog-add-carte">
+	<!-- form id="add-carte-form" method="POST" action="/Biblioteca/books/add"-->
+		<div class="line-add-carte">
+			<div class="eticheta-add-carte">Titlu cartii:</div>
+			<input type="text" id="add-carte-titlu" class="input-add-carte" name="add-carte-titlu"/>
+		</div>
+		<div class="line-add-carte">
+			<div class="eticheta-add-carte">Autori:</div>
+			<input type="text" id="add-carte-autori" class="input-add-carte" name="add-carte-autori"/>
+		</div>
+		<div class="line-add-carte">
+			<div class="eticheta-add-carte">Editura:</div>
+			<input type="text" id="add-carte-editura" class="input-add-carte" name="add-carte-editura"/>
+		</div>
+		<div class="line-add-carte">
+			<div class="eticheta-add-carte">Anul publicarii:</div>
+			<input type="text" id="add-carte-an" class="input-add-carte" name="add-carte-an"/>
+		</div>
+		<div class="line-add-carte">
+			<div class="eticheta-add-carte">Locul publicarii:</div>
+			<input type="text" id="add-carte-loc" class="input-add-carte" name="add-carte-loc"/>
+		</div>
+		<div class="line-add-carte">
+			<div class="eticheta-add-carte">Perioada de imprumut:</div>
+			<input type="text" id="add-carte-durata" class="input-add-carte" name="add-carte-durata"/>
+		</div>
+		<div class="line-add-carte">
+			<div class="eticheta-add-carte">ISBN:</div>
+			<input type="text" id="add-carte-isbn" class="input-add-carte" name="add-carte-isbn"/>
+		</div>
+		<div class="line-add-carte">
+			<div class="eticheta-add-carte">Cota:</div>
+			<input type="text" id="add-carte-cota" class="input-add-carte" name="add-carte-cota"/>
+		</div>
+		<div class="line-add-carte">
+			<div class="eticheta-add-carte">Observatii:</div>
+			<textarea rows="10" cols="50" id="add-carte-obs" name="add-carte-obs"></textarea>
+		</div>
+	<!-- /form-->
+</div>
+
+<div id="dialog-import-books">
+	<form id="form-import-books" method="post" action="/Biblioteca/books/import" enctype="multipart/form-data">
+		<div class="line-add-carte">
+			<div class="eticheta-add-carte">Fisier:</div>
+			<input type="file" id="books-file" name="books-file"/>
+		</div>
+	</form>
 </div>

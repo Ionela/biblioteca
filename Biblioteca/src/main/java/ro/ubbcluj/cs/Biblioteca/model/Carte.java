@@ -1,6 +1,8 @@
 package ro.ubbcluj.cs.Biblioteca.model;
 
-public class Carte {
+import java.io.Serializable;
+
+public class Carte implements Serializable{
 	private int idCarte;
 	private String cota;
 	private String titlu;
@@ -9,7 +11,7 @@ public class Carte {
 	private String editura;
 	private String locAparitie;
 	private int anAparitie;
-	private String Observatii;
+	private String observatii;
 	private int durataImprumut;
 	
 	public Carte(int idCarte, String cota, String titlu, String autori,
@@ -23,7 +25,7 @@ public class Carte {
 		this.editura = editura;
 		this.locAparitie = locAparitie;
 		this.anAparitie = anAparitie;
-		Observatii = observatii;
+		this.observatii = observatii;
 		this.durataImprumut = durataImprumut;
 	}
 
@@ -94,11 +96,11 @@ public class Carte {
 	}
 
 	public String getObservatii() {
-		return Observatii;
+		return observatii;
 	}
 
 	public void setObservatii(String observatii) {
-		Observatii = observatii;
+		this.observatii = observatii;
 	}
 
 	public int getDurataImprumut() {

@@ -1,8 +1,11 @@
 package ro.ubbcluj.cs.Biblioteca.controllers;
 
+import java.util.List;
+
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import ro.ubbcluj.cs.Biblioteca.model.Carte;
 import ro.ubbcluj.cs.Biblioteca.model.User;
 
 @Component
