@@ -16,15 +16,13 @@ CREATE  TABLE IF NOT EXISTS `biblioteca`.`Carti` (
   `cota` VARCHAR(10) NOT NULL ,
   `titlu` VARCHAR(200) NULL ,
   `autori` VARCHAR(200) NULL ,
-  `isbn` VARCHAR(45) NOT NULL ,
+  `isbn` VARCHAR(45) NULL ,
   `editura` VARCHAR(100) NULL ,
   `locAparitie` VARCHAR(100) NULL ,
   `anAparitie` INT NULL ,
   `observatii` VARCHAR(400) NULL ,
   `durataImprumut` INT NULL DEFAULT 1 ,
-  PRIMARY KEY (`idCarte`) ,
-  UNIQUE INDEX `cota_UNIQUE` (`cota` ASC) ,
-  UNIQUE INDEX `isbn_UNIQUE` (`isbn` ASC) )
+  PRIMARY KEY (`idCarte`) )
 ENGINE = InnoDB;
 
 
@@ -105,3 +103,12 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+-- -----------------------------------------------------
+-- Data for table `biblioteca`.`Useri`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `biblioteca`;
+INSERT INTO `biblioteca`.`Useri` (`idUser`, `username`, `password`, `nume`, `email`, `telefon`, `adresa`, `drepturi`) VALUES (1, 'admin', 'admin', 'Administrator', 'admin@yahoo.com', '0751958115', 'Brasov', 2);
+
+COMMIT;
