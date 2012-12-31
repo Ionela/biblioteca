@@ -21,15 +21,18 @@
 
 #import-books-img{
 	float: left;
+	cursor: pointer;
 }
 
 #add-book-img{
 	float: left;
 	margin-left: 10px;
+	cursor: pointer;
 }
 
 #export-pdf-img{
 	float: right;
+	cursor: pointer;
 }
 
 #filters{
@@ -39,46 +42,67 @@
 	margin-right: auto;
 	width: 1000 px;
 	height: 30 px;
-	/*border: 1px solid black;*/
-	
-	
+	/*border: 1px solid black;*/	
 }
 
 #filters>div{
 	float: left;
 	/*border: 1px solid black;*/
 	border-right: 1px solid black;
-	width: 199 px;
 	height: 30 px;
+}
+
+#filters>div>input{
+	margin-left: 3px;
 }
 
 #filters>div>img{
 	float: right;
-	margin-right: 5px;
+	/*margin-right: 5px;*/
+	width: 20px;
 }
 
 #filter-titlu{
-	
+	width: 29.5%;
 }
 
 #filter-autori{
-	
+	width: 29.5%;
 }
 
 #filter-an{
-	
+	width: 6%;
 }
 
 #filter-editura{
-	
+	width: 27.5%;
 }
 
 #filter-disponibil{
-	
+	width: 7%;
+}
+
+#input-filter-titlu{
+	width: 80%;
+}
+
+#input-filter-autori{
+	width: 80%;
+}
+
+#input-filter-an{
+	width: 55%;
+}
+
+#input-filter-editura{
+	width: 80%;
+}
+
+#input-filter-disponibil{
+	width: 60%;
 }
 
 /*	TABEL CARTI */
-
 #divTableCarti{
 	height: 545 px;
 	width: 1000 px;
@@ -91,23 +115,23 @@
 }
 
 #main-head-titlu{
-	
+	width: 30%;
 }
 
 #main-head-autori{
-	
+	width: 30%;
 }
 
 #main-head-an{
-	width: 85px;
+	width: 6%;
 }
 
 #main-head-editura{
-	
+	width: 28%;
 }
 
 #main-head-disponibil{
-	width: 80px;	
+	width: 6%;	
 }
 
 
@@ -135,19 +159,47 @@
 }
 
 #previous-page{
-	width: 60px;
+	width: 30px;
 	float: left;
+	cursor: pointer;
 }
 
 #next-page{
-	width: 60px;
-	float:right;	
+	width: 30px;
+	float:right;
+	cursor: pointer;
 }
 
 #pages{
 	text-align: center;
 	float: left;
-	width: 874px;
+	width: 145px;
+	height: 30px;
+	margin-left: 400px;
+}
+
+#pages>div{
+	float: left;
+	margin-left: 5px;
+	margin-right: 5px;
+	width: 10px;
+	height: 20px;
+	font-weight: bold;
+}
+
+.page-button{
+	cursor: pointer;
+	color: #231DCF;
+	text-decoration: underline;
+}
+
+.button-mouse-over{
+	border: 1px solid black;
+	background-color: rgba(47, 162, 218, 0.57);
+}
+
+.hiddenDiv{
+	visibility: hidden;
 }
 
 .eticheta-add-carte{
@@ -163,4 +215,3 @@
 .line-add-carte{
 	width: 580px;
 	height: 32px;
-}

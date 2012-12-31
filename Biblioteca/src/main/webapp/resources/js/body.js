@@ -93,6 +93,54 @@ $(function() {
         	$("#dialog-import-books > div > input").val("");
         }
     });
+    
+    $(".page-button").mouseover(function() {
+    	$(this).addClass("button-mouse-over");
+    });
+    
+    $(".page-button").mouseout(function() {
+    	$(this).removeClass("button-mouse-over");
+    });
+    
+    $(".page-button").click(function() {
+    	titlu = $("#input-filter-titlu").val();
+    	autori = $("#input-filter-autori").val();
+    	an = $("#input-filter-an").val();
+    	editura = $("#input-filter-editura").val();
+    	disponibil = $("#input-filter-disponibil").val();
+    	
+    	loadBooks(parseInt($(this).html()), titlu, autori, an, editura, disponibil);
+    });
+    
+    $("#previous-page").click(function() {
+    	
+    	if ($("#previous-1").html() == "") {
+    		return;
+    	}
+    	
+    	titlu = $("#input-filter-titlu").val();
+    	autori = $("#input-filter-autori").val();
+    	an = $("#input-filter-an").val();
+    	editura = $("#input-filter-editura").val();
+    	disponibil = $("#input-filter-disponibil").val();
+    	
+    	loadBooks(parseInt($("#current").html()) - 1, titlu, autori, an, editura, disponibil);
+    });
+    
+    $("#next-page").click(function() {
+    	
+    	if ($("#next-1").html() == "") {
+    		return;
+    	}
+    	
+    	titlu = $("#input-filter-titlu").val();
+    	autori = $("#input-filter-autori").val();
+    	an = $("#input-filter-an").val();
+    	editura = $("#input-filter-editura").val();
+    	disponibil = $("#input-filter-disponibil").val();
+    	
+    	loadBooks(parseInt($("#current").html()) + 1, titlu, autori, an, editura, disponibil);
+    });
 })
 
 function loadBooks(pageNr, titlu, autori, an, editura, disponibil) {
@@ -108,8 +156,9 @@ function loadBooks(pageNr, titlu, autori, an, editura, disponibil) {
 			function (data) {
 				$("#tabelCarti>tbody>tr>td").html("");
 				books = $.parseJSON(data);
-				
-			    $.each(books, function(index, book){
+
+				// populate the table
+			    $.each(books[1], function(index, book){
 			    	$("#tabelCarti tbody tr:nth-child(" + (index + 1) + ")").attr("id", book.idCarte);
 			    	$("#tabelCarti tbody tr:nth-child(" + (index + 1) + ") td:nth-child("+ 1 + ")").html(book.titlu);
 			    	$("#tabelCarti tbody tr:nth-child(" + (index + 1) + ") td:nth-child("+ 2 + ")").html(book.autori);
@@ -117,6 +166,28 @@ function loadBooks(pageNr, titlu, autori, an, editura, disponibil) {
 			    	$("#tabelCarti tbody tr:nth-child(" + (index + 1) + ") td:nth-child("+ 4 + ")").html(book.editura);
 			    	$("#tabelCarti tbody tr:nth-child(" + (index + 1) + ") td:nth-child("+ 5 + ")").html("");
 			     });
+			    
+			    // build the navigation tab
+			    totalPages = Math.floor(books[0] / 10) + 1;
+			    $("#current").html(pageNr);
+			    $(".page-button").html("");
+			    $(".page-button").addClass("hiddenDiv");
+			    if (pageNr > 1) {
+			    	$("#previous-1").html(pageNr - 1);
+			    	$("#previous-1").removeClass("hiddenDiv");
+			    }
+			    if (pageNr > 2) {
+			    	$("#previous-2").html(pageNr - 2);
+			    	$("#previous-2").removeClass("hiddenDiv");
+			    }
+			    if (pageNr < totalPages) {
+			    	$("#next-1").html(pageNr + 1);
+			    	$("#next-1").removeClass("hiddenDiv");
+			    }
+			    if (pageNr < totalPages - 1) {
+			    	$("#next-2").html(pageNr + 2);
+			    	$("#next-2").removeClass("hiddenDiv");
+			    }
 			}
 	);
 }

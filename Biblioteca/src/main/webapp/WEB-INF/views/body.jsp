@@ -127,7 +127,13 @@
 			</div>
 			
 			<div id="pages">
-				... 1 2 3 ...
+				<div id="previous-more">...</div>
+				<div id="previous-2" class="page-button">1</div>
+				<div id="previous-1" class="page-button">2</div>
+				<div id="current">3</div>
+				<div id="next-1" class="page-button">4</div>
+				<div id="next-2" class="page-button">5</div>
+				<div id="next-more">...</div>
 			</div>
 			
 			<div id="next-page">

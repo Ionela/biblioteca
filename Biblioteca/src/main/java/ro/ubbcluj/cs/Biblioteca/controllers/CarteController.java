@@ -9,6 +9,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -99,7 +100,11 @@ public class CarteController {
 		} else if (endIndex >= carti.size()) {
 			endIndex = carti.size() - 1;
 		}
-		return gson.toJson(carti.subList(startIndex, endIndex));
+		
+		// return the total number of books, and the books from the given page.
+		// the total number of books is used to generate the navigation tab.
+		List<Object> response = new ArrayList<Object>(Arrays.asList(new Object[]{carti.size(), carti.subList(startIndex, endIndex)}));
+		return gson.toJson(response);
 	}
 	
 	@RequestMapping(value="/import", method = RequestMethod.POST)
