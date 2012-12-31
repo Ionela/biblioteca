@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.google.gson.Gson;
+
 import ro.ubbcluj.cs.Biblioteca.dao.CarteDao;
 import ro.ubbcluj.cs.Biblioteca.model.Carte;
 
@@ -46,7 +48,10 @@ public class HibernateCarteDao implements CarteDao{
 	@Transactional
 	public List<Carte> getCartiByFilter(String titlu, String autori, String an, String editura, String disponibil) {
 		// TODO Filter Books
-		List<Carte> carti = currentSession().createQuery("from Carte").list();
+		List<Carte> carti = currentSession().createQuery("from Carte where titlu like '%"+ titlu +"%' and autori like '%"+ autori +"%'" + 
+		" and anAparitie like '%"+ an +"%' " + 
+		" and editura like '%"+ editura +"%'").list();
+
 		return carti;
 	}
 	

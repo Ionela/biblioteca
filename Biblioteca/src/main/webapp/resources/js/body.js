@@ -102,6 +102,7 @@ $(function() {
     	$(this).removeClass("button-mouse-over");
     });
     
+    // select a specific page
     $(".page-button").click(function() {
     	titlu = $("#input-filter-titlu").val();
     	autori = $("#input-filter-autori").val();
@@ -112,6 +113,7 @@ $(function() {
     	loadBooks(parseInt($(this).html()), titlu, autori, an, editura, disponibil);
     });
     
+    // click previous page
     $("#previous-page").click(function() {
     	
     	if ($("#previous-1").html() == "") {
@@ -127,6 +129,8 @@ $(function() {
     	loadBooks(parseInt($("#current").html()) - 1, titlu, autori, an, editura, disponibil);
     });
     
+    
+    //clicl next page
     $("#next-page").click(function() {
     	
     	if ($("#next-1").html() == "") {
@@ -140,6 +144,16 @@ $(function() {
     	disponibil = $("#input-filter-disponibil").val();
     	
     	loadBooks(parseInt($("#current").html()) + 1, titlu, autori, an, editura, disponibil);
+    });
+    
+    $("#filters>div>input").change(function(){
+    	titlu = $("#input-filter-titlu").val();
+    	autori = $("#input-filter-autori").val();
+    	an = $("#input-filter-an").val();
+    	editura = $("#input-filter-editura").val();
+    	disponibil = $("#input-filter-disponibil").val();
+    	
+    	loadBooks(1, titlu, autori, an, editura, disponibil);    	
     });
 })
 

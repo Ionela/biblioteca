@@ -98,7 +98,7 @@ public class CarteController {
 		if (startIndex >= carti.size()) {
 			return gson.toJson(new ArrayList<Carte>());
 		} else if (endIndex >= carti.size()) {
-			endIndex = carti.size() - 1;
+			endIndex = carti.size();
 		}
 		
 		// return the total number of books, and the books from the given page.

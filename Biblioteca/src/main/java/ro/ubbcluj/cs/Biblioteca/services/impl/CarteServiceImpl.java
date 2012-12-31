@@ -20,6 +20,6 @@ public class CarteServiceImpl implements ICarteService{
 	
 	public List<Carte> getCartiByFilter(String titlu, String autori, String an, String editura, String disponibil) {
 		//TODO: filter books
-		return carteDao.getAllCarti();
+		return carteDao.getCartiByFilter(titlu, autori, an, editura, disponibil);
 	}
 }
