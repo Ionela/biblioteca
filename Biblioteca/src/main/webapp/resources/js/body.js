@@ -155,6 +155,23 @@ $(function() {
     	
     	loadBooks(1, titlu, autori, an, editura, disponibil);    	
     });
+    
+    $("#export-pdf-img").click(function(){
+    	pageNr = $("#current").html();
+    	titlu = $("#input-filter-titlu").val();
+    	autori = $("#input-filter-autori").val();
+    	an = $("#input-filter-an").val();
+    	editura = $("#input-filter-editura").val();
+    	disponibil = $("#input-filter-disponibil").val();
+    	
+    	
+    	window.location = "http://localhost:9999/Biblioteca/books/export?input-filter-page="+ pageNr + 
+    		"&input-filter-titlu="+ titlu + 
+    		"&input-filter-autori="+ autori +
+    		"&input-filter-an="+ an +
+    		"&input-filter-editura="+ editura +
+    		"&input-filter-disponibil=" + disponibil;
+    });
 })
 
 function loadBooks(pageNr, titlu, autori, an, editura, disponibil) {

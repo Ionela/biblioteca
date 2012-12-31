@@ -13,6 +13,7 @@ public class Carte implements Serializable{
 	private int anAparitie;
 	private String observatii;
 	private int durataImprumut;
+	private boolean disponibil = true;
 	
 	public Carte(int idCarte, String cota, String titlu, String autori,
 			String isbn, String editura, String locAparitie, int anAparitie,
@@ -109,5 +110,13 @@ public class Carte implements Serializable{
 
 	public void setDurataImprumut(int durataImprumut) {
 		this.durataImprumut = durataImprumut;
+	}
+
+	public boolean isDisponibil() {
+		return disponibil;
+	}
+
+	public void setDisponibil(boolean disponibil) {
+		this.disponibil = disponibil;
 	}
 }
