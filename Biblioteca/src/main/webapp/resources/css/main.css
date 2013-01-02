@@ -34,3 +34,7 @@ th {
 tr {
 	height: 46px;
 }
+
+.trMouseOver{
+	background-color: #eeeeff
+}

@@ -1,7 +1,7 @@
 @CHARSET "ISO-8859-1";
 
 #body{
-	width: 1200 px;
+	width: 1200px;
 	margin-left: auto;
 	margin-right: auto;
 	/*height: 700 px;*/
@@ -12,8 +12,8 @@
 /*	FILTERS	*/
 
 #export-pdf{
-	width: 1000 px;
-	height: 30 px;
+	width: 1000px;
+	height: 30px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 25px;
@@ -37,11 +37,11 @@
 
 #filters{
 	/*margin-top: 50 px;*/
-	margin-bottom: 5 px; 
+	margin-bottom: 5px; 
 	margin-left: auto;
 	margin-right: auto;
-	width: 1000 px;
-	height: 30 px;
+	width: 1000px;
+	height: 30px;
 	/*border: 1px solid black;*/	
 }
 
@@ -49,7 +49,7 @@
 	float: left;
 	/*border: 1px solid black;*/
 	border-right: 1px solid black;
-	height: 30 px;
+	height: 30px;
 }
 
 #filters>div>input{
@@ -63,23 +63,23 @@
 }
 
 #filter-titlu{
-	width: 29.5%;
+	width: 28.8%;
 }
 
 #filter-autori{
-	width: 29.5%;
+	width: 28.7%;
 }
 
 #filter-an{
-	width: 6%;
+	width: 6.3%;
 }
 
 #filter-editura{
-	width: 27.5%;
+	width: 28.8%;
 }
 
 #filter-disponibil{
-	width: 7%;
+	width: 6.9%;
 }
 
 #input-filter-titlu{
@@ -104,22 +104,22 @@
 
 /*	TABEL CARTI */
 #divTableCarti{
-	height: 545 px;
-	width: 1000 px;
+	height: 545px;
+	width: 1000px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 #tabelCarti{
-	width: 1000 px;
+	width: 1075px;
 }
 
 #main-head-titlu{
-	width: 30%;
+	width: 27%;
 }
 
 #main-head-autori{
-	width: 30%;
+	width: 27%;
 }
 
 #main-head-an{
@@ -127,27 +127,43 @@
 }
 
 #main-head-editura{
-	width: 28%;
+	width: 27%;
 }
 
 #main-head-disponibil{
 	width: 6%;	
 }
 
+#main-head-extra{
+	width: 7%;
+	visibility: hidden;
+	border: 0px;
+}
+
+.book-menu-img{
+	float: left;
+	margin-left: 5px;
+}
+
+.book-menu-td-hidden{
+	border: 0px;
+	visibility: hidden
+}
+
 
 /*	NEXT / PREVIOUS PAGE */
 #controll{
-	width: 1000 px;
-	height: 30 px;
+	width: 1000px;
+	height: 30px;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 5 px;
+	margin-top: 5px;
 	/*border: 1px solid black;*/
 }
 
 #controll>div{
 	/*border: 1px solid black;*/
-	height: 30 px;
+	height: 30px;
 }
 
 #controll>#previous-page>img{
@@ -198,7 +214,7 @@
 	background-color: rgba(47, 162, 218, 0.57);
 }
 
-.hiddenDiv{
+.hiddenElement{
 	visibility: hidden;
 }
 
@@ -215,3 +231,8 @@
 .line-add-carte{
 	width: 580px;
 	height: 32px;
+}
+
+.book-menu-img{
+	cursor: pointer;
+}

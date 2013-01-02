@@ -42,7 +42,6 @@ public class HibernateCarteDao implements CarteDao{
 		} else {
 			return carti.get(0);
 		}
-		
 	}
 
 	@Transactional
@@ -60,6 +59,15 @@ public class HibernateCarteDao implements CarteDao{
 		List<Carte> carti = currentSession().createQuery("from Carte").list();
 		return carti;
 	}
-	
-	
+
+	@Transactional
+	public Carte getCarteById(String id) {
+		List<Carte> carti = currentSession().createQuery("from Carte where idCarte='" + id + "'").list();
+
+		if (carti.isEmpty()) {
+			return null;
+		} else {
+			return carti.get(0);
+		}
+	}
 }

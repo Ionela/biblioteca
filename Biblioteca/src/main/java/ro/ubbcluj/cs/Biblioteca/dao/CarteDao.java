@@ -19,6 +19,8 @@ public interface CarteDao {
 	 */
 	public Carte getCarteByCota(String cota);
 	
+	public Carte getCarteById(String id);
+	
 	public List<Carte> getCartiByFilter(String titlu, String autori, String an, String editura, String disponibil);
 	
 	public List<Carte> getAllCarti();

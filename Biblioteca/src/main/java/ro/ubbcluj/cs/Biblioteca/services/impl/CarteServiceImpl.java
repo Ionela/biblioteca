@@ -22,4 +22,8 @@ public class CarteServiceImpl implements ICarteService{
 		//TODO: filter books
 		return carteDao.getCartiByFilter(titlu, autori, an, editura, disponibil);
 	}
+	
+	public Carte getCarteById(String id) {
+		return carteDao.getCarteById(id);
+	}
 }

@@ -23,4 +23,11 @@ public interface ICarteService {
 	 * @return
 	 */
 	public List<Carte> getCartiByFilter(String titlu, String autori, String an, String editura, String disponibil);
+	
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 */
+	public Carte getCarteById(String id);
 }

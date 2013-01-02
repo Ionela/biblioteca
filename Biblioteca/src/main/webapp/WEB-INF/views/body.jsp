@@ -1,6 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <div id="body">
+	<input type="hidden" id="drepturi-user" value="${user.drepturi}"/>
+
 	<div id="export-pdf">
 		<c:if test="${user.drepturi == 2}">
 			<img id="import-books-img" alt="import" title="Incarca lista cartilor din fisier" src="<c:url value='/resources/img/import.png'/>" />
@@ -13,23 +15,23 @@
 		<input type="hidden" id="input-filter-page" name="input-filter-page" />
 		<div id="filter-titlu">
 			<input id="input-filter-titlu" type="text" name="input-filter-titlu"/>
-			<img alt="filter" src="<c:url value='/resources/img/filter.png'/>">
+			<img alt="filter" src="<c:url value='/resources/img/filter.png'/>" />
 		</div>
 		<div id="filter-autori">
 			<input id="input-filter-autori" type="text" name="input-filter-autori"/>
-			<img alt="filter" src="<c:url value='/resources/img/filter.png'/>">
+			<img alt="filter" src="<c:url value='/resources/img/filter.png'/>" />
 		</div>
 		<div id="filter-an">
 			<input id="input-filter-an" type="text" name="input-filter-an"/>
-			<img alt="filter" src="<c:url value='/resources/img/filter.png'/>">
+			<img alt="filter" src="<c:url value='/resources/img/filter.png'/>" />
 		</div>
 		<div id="filter-editura">
 			<input id="input-filter-editura" type="text" name="input-filter-editura"/>
-			<img alt="filter" src="<c:url value='/resources/img/filter.png'/>">
+			<img alt="filter" src="<c:url value='/resources/img/filter.png'/>" />
 		</div>
 		<div id="filter-disponibil">
 			<input id="input-filter-disponibil" type="text" name="input-filter-disponibil"/>
-			<img alt="filter" src="<c:url value='/resources/img/filter.png'/>">
+			<img alt="filter" src="<c:url value='/resources/img/filter.png'/>" />
 		</div>
 		<div class="clearFloat"></div>
 	</div>
@@ -43,6 +45,7 @@
 					<th id="main-head-an">An Aparitie</th>
 					<th id="main-head-editura">Editura</th>
 					<th id="main-head-disponibil">Disponibil</th>
+					<th id="main-head-extra">Extra</th>
 				</tr>
 			</thead>
 
@@ -53,6 +56,16 @@
 					<td>Coloana3</td>
 					<td>Coloana4</td>
 					<td>Coloana5</td>
+					<td class="book-menu book-menu-td-hidden">
+						<img id="book-details" class="book-menu-img book-details-img" alt="Detalii" title="Detalii" src="<c:url value='/resources/img/edit.png'/>">
+						<c:if test="${user.drepturi == 2}">
+							<img id="book-delete" class="book-menu-img" alt="Sterge" title="Sterge cartea" src="<c:url value='/resources/img/delete.png'/>" />
+						</c:if>
+						
+						<c:if test="${user.drepturi == 1}">
+							<img id="book-lend" class="book-menu-img" alt="Imprumuta" title="Imprumuta" src="<c:url value='/resources/img/lend.png'/>" />
+						</c:if>
+					</td>
 				</tr>
 				<tr>
 					<td>Coloana1</td>
@@ -60,6 +73,16 @@
 					<td>Coloana3</td>
 					<td>Coloana4</td>
 					<td>Coloana5</td>
+					<td class="book-menu book-menu-td-hidden">
+						<img id="book-details" class="book-menu-img book-details-img" alt="Detalii" title="Detalii" src="<c:url value='/resources/img/edit.png'/>" />
+						<c:if test="${user.drepturi == 2}">
+							<img id="book-delete" class="book-menu-img" alt="Sterge" title="Sterge cartea" src="<c:url value='/resources/img/delete.png'/>" />
+						</c:if>
+						
+						<c:if test="${user.drepturi == 1}">
+							<img id="book-lend" class="book-menu-img" alt="Imprumuta" title="Imprumuta" src="<c:url value='/resources/img/lend.png'/>" />
+						</c:if>
+					</td>
 				</tr>
 				<tr>
 					<td>Coloana1</td>
@@ -67,6 +90,16 @@
 					<td>Coloana3</td>
 					<td>Coloana4</td>
 					<td>Coloana5</td>
+					<td class="book-menu book-menu-td-hidden">
+						<img id="book-details" class="book-menu-img book-details-img" alt="Detalii" title="Detalii" src="<c:url value='/resources/img/edit.png'/>" />
+						<c:if test="${user.drepturi == 2}">
+							<img id="book-delete" class="book-menu-img" alt="Sterge" title="Sterge cartea" src="<c:url value='/resources/img/delete.png'/>" />
+						</c:if>
+						
+						<c:if test="${user.drepturi == 1}">
+							<img id="book-lend" class="book-menu-img" alt="Imprumuta" title="Imprumuta" src="<c:url value='/resources/img/lend.png'/>" />
+						</c:if>
+					</td>
 				</tr>
 				<tr>
 					<td>Coloana1</td>
@@ -74,6 +107,16 @@
 					<td>Coloana3</td>
 					<td>Coloana4</td>
 					<td>Coloana5</td>
+					<td class="book-menu book-menu-td-hidden">
+						<img id="book-details" class="book-menu-img book-details-img" alt="Detalii" title="Detalii" src="<c:url value='/resources/img/edit.png'/>" />
+						<c:if test="${user.drepturi == 2}">
+							<img id="book-delete" class="book-menu-img" alt="Sterge" title="Sterge cartea" src="<c:url value='/resources/img/delete.png'/>" />
+						</c:if>
+						
+						<c:if test="${user.drepturi == 1}">
+							<img id="book-lend" class="book-menu-img" alt="Imprumuta" title="Imprumuta" src="<c:url value='/resources/img/lend.png'/>" />
+						</c:if>
+					</td>
 				</tr>
 				<tr>
 					<td>Coloana1</td>
@@ -81,6 +124,16 @@
 					<td>Coloana3</td>
 					<td>Coloana4</td>
 					<td>Coloana5</td>
+					<td class="book-menu book-menu-td-hidden">
+						<img id="book-details" class="book-menu-img book-details-img" alt="Detalii" title="Detalii" src="<c:url value='/resources/img/edit.png'/>" />
+						<c:if test="${user.drepturi == 2}">
+							<img id="book-delete" class="book-menu-img" alt="Sterge" title="Sterge cartea" src="<c:url value='/resources/img/delete.png'/>" />
+						</c:if>
+						
+						<c:if test="${user.drepturi == 1}">
+							<img id="book-lend" class="book-menu-img" alt="Imprumuta" title="Imprumuta" src="<c:url value='/resources/img/lend.png'/>" />
+						</c:if>
+					</td>
 				</tr>
 				<tr>
 					<td>Coloana1</td>
@@ -88,6 +141,16 @@
 					<td>Coloana3</td>
 					<td>Coloana4</td>
 					<td>Coloana5</td>
+					<td class="book-menu book-menu-td-hidden">
+						<img id="book-details" class="book-menu-img book-details-img" alt="Detalii" title="Detalii" src="<c:url value='/resources/img/edit.png'/>" />
+						<c:if test="${user.drepturi == 2}">
+							<img id="book-delete" class="book-menu-img" alt="Sterge" title="Sterge cartea" src="<c:url value='/resources/img/delete.png'/>" />
+						</c:if>
+						
+						<c:if test="${user.drepturi == 1}">
+							<img id="book-lend" class="book-menu-img" alt="Imprumuta" title="Imprumuta" src="<c:url value='/resources/img/lend.png'/>" />
+						</c:if>
+					</td>
 				</tr>
 				<tr>
 					<td>Coloana1</td>
@@ -95,6 +158,16 @@
 					<td>Coloana3</td>
 					<td>Coloana4</td>
 					<td>Coloana5</td>
+					<td class="book-menu book-menu-td-hidden">
+						<img id="book-details" class="book-menu-img book-details-img" alt="Detalii" title="Detalii" src="<c:url value='/resources/img/edit.png'/>" />
+						<c:if test="${user.drepturi == 2}">
+							<img id="book-delete" class="book-menu-img" alt="Sterge" title="Sterge cartea" src="<c:url value='/resources/img/delete.png'/>" />
+						</c:if>
+						
+						<c:if test="${user.drepturi == 1}">
+							<img id="book-lend" class="book-menu-img" alt="Imprumuta" title="Imprumuta" src="<c:url value='/resources/img/lend.png'/>" />
+						</c:if>
+					</td>
 				</tr>
 				<tr>
 					<td>Coloana1</td>
@@ -102,6 +175,16 @@
 					<td>Coloana3</td>
 					<td>Coloana4</td>
 					<td>Coloana5</td>
+					<td class="book-menu book-menu-td-hidden">
+						<img id="book-details" class="book-menu-img book-details-img" alt="Detalii" title="Detalii" src="<c:url value='/resources/img/edit.png'/>" />
+						<c:if test="${user.drepturi == 2}">
+							<img id="book-delete" class="book-menu-img" alt="Sterge" title="Sterge cartea" src="<c:url value='/resources/img/delete.png'/>" />
+						</c:if>
+						
+						<c:if test="${user.drepturi == 1}">
+							<img id="book-lend" class="book-menu-img" alt="Imprumuta" title="Imprumuta" src="<c:url value='/resources/img/lend.png'/>" />
+						</c:if>
+					</td>
 				</tr>
 				<tr>
 					<td>Coloana1</td>
@@ -109,6 +192,16 @@
 					<td>Coloana3</td>
 					<td>Coloana4</td>
 					<td>Coloana5</td>
+					<td class="book-menu book-menu-td-hidden">
+						<img id="book-details" class="book-menu-img book-details-img" alt="Detalii" title="Detalii" src="<c:url value='/resources/img/edit.png'/>" />
+						<c:if test="${user.drepturi == 2}">
+							<img id="book-delete" class="book-menu-img" alt="Sterge" title="Sterge cartea" src="<c:url value='/resources/img/delete.png'/>" />
+						</c:if>
+						
+						<c:if test="${user.drepturi == 1}">
+							<img id="book-lend" class="book-menu-img" alt="Imprumuta" title="Imprumuta" src="<c:url value='/resources/img/lend.png'/>" />
+						</c:if>
+					</td>
 				</tr>
 				<tr>
 					<td>Coloana1</td>
@@ -116,6 +209,16 @@
 					<td>Coloana3</td>
 					<td>Coloana4</td>
 					<td>Coloana5</td>
+					<td class="book-menu book-menu-td-hidden">
+						<img id="book-details" class="book-menu-img book-details-img" alt="Detalii" title="Detalii" src="<c:url value='/resources/img/edit.png'/>" />
+						<c:if test="${user.drepturi == 2}">
+							<img id="book-delete" class="book-menu-img" alt="Sterge" title="Sterge cartea" src="<c:url value='/resources/img/delete.png'/>" />
+						</c:if>
+						
+						<c:if test="${user.drepturi == 1}">
+							<img id="book-lend" class="book-menu-img" alt="Imprumuta" title="Imprumuta" src="<c:url value='/resources/img/lend.png'/>" />
+						</c:if>
+					</td>
 				</tr>
 				
 			</tbody>

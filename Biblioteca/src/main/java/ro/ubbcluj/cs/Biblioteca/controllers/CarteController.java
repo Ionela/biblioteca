@@ -32,6 +32,7 @@ import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -157,6 +158,13 @@ public class CarteController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	@RequestMapping(value="/book/{book-id}", method=RequestMethod.GET)
+	public @ResponseBody String getBookById(Map<String, Object> model, @PathVariable("book-id") String bookId) {
+		Carte carte = carteService.getCarteById(bookId);
+		Gson gson = new Gson();
+		return gson.toJson(carte);
 	}
 	
 	private InputStream generatePDF(String raportPath, List<Carte> dataSource) throws JRException, FileNotFoundException {
