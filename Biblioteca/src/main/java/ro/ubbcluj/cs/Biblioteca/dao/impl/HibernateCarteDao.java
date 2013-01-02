@@ -27,15 +27,20 @@ public class HibernateCarteDao implements CarteDao{
 	public void addCarte(Carte carte) {
 		currentSession().save(carte);
 	}
+	
+	@Transactional
+	public void updateCarte(Carte carte) {
+		currentSession().update(carte);
+	}
+	
+	@Transactional
+	public void deleteCarte(Carte carte) {
+		currentSession().delete(carte);
+	}
 
 	@Transactional
 	public Carte getCarteByCota(String cota) {
 		List<Carte> carti = currentSession().createQuery("from Carte where cota='" + cota + "'").list();
-//		for (Carte carte : carti) {
-//			if (carte.getCota().equals(cota)) {
-//				return carte;
-//			}
-//		}
 		
 		if (carti.isEmpty()) {
 			return null;

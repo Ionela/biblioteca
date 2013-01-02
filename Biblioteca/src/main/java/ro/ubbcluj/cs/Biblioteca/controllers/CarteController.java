@@ -89,6 +89,56 @@ public class CarteController {
 		return "success";
 	}
 	
+	@RequestMapping(value="/book/{book-id}", method=RequestMethod.POST)
+	public @ResponseBody String updateBook(Map<String, Object> model,
+			@PathVariable("book-id") String bookId,
+			@RequestParam("add-carte-titlu") String titlu, 
+			@RequestParam("add-carte-autori") String autori, 
+			@RequestParam("add-carte-editura") String editura, 
+			@RequestParam("add-carte-an") String an, 
+			@RequestParam("add-carte-loc") String loc, 
+			@RequestParam("add-carte-isbn") String isbn, 
+			@RequestParam("add-carte-cota") String cota, 
+			@RequestParam("add-carte-durata") String durata, 
+			@RequestParam("add-carte-obs") String obs){
+		
+		if (session.getUserCrt() != null && session.getUserCrt().getDrepturi() == Drepturi.ADMIN) {
+			// TODO: Refresh the list of books according to filter values.
+			// TODO: validate inputs
+			// TODO: exception handling
+
+			try {
+				Carte carte = new Carte(Integer.parseInt(bookId), cota, titlu, autori, isbn, editura, loc, Integer.parseInt(an), obs, Integer.parseInt(durata));
+				carte = carteService.updateCarte(carte);
+			} catch (Exception e) {
+				e.printStackTrace();
+				return "fail";
+			}
+		}
+		
+		return "success";
+	}
+	
+	@RequestMapping(value="/book/{book-id}", method=RequestMethod.DELETE)
+	public @ResponseBody String deleteBook(Map<String, Object> model, @PathVariable("book-id") String bookId){
+		
+		if (session.getUserCrt() != null && session.getUserCrt().getDrepturi() == Drepturi.ADMIN) {
+			// TODO: Refresh the list of books according to filter values.
+			// TODO: validate inputs
+			// TODO: exception handling
+
+			try {
+				Carte carte = new Carte(Integer.parseInt(bookId), "", "", "", "", "", "", 0, "", 0);
+				carteService.deleteCarte(carte);
+			} catch (Exception e) {
+				e.printStackTrace();
+				return "fail";
+			}
+		}
+		
+		return "success";
+	}
+	
 	@RequestMapping(value="/get/all", method=RequestMethod.GET)
 	public @ResponseBody String getBooks(Map<String, Object> model, 
 			@RequestParam("input-filter-page") String pageNo,

@@ -26,4 +26,27 @@ public class HibernateUserDao implements UserDao{
 		return currentSession().createQuery("from User").list();
 	}
 	
+	@Transactional
+	public User getUserById(String id) {
+		List<User> useri = currentSession().createQuery("from User where idUser=" + id).list();
+		if (useri.isEmpty()) { 
+			return null;
+		}
+		return useri.get(0);
+	}
+	
+	@Transactional
+	public void deleteUser(User user) {
+		currentSession().delete(user);
+	}
+	
+	@Transactional
+	public void addUser(User user) {
+		currentSession().save(user);
+	}
+	
+	@Transactional
+	public void updateUser(User user) {
+		currentSession().update(user);
+	}
 }

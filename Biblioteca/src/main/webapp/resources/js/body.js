@@ -1,3 +1,6 @@
+var bookId = 0;
+var userId = 0;
+var addUser = true;
 $(function() {
 	
 	// show the add book dialog on click
@@ -49,7 +52,17 @@ $(function() {
 	            			},
 	            			function (data) {
 	            				if (data == "success") {
-	            					alert("Cartea a fost adaugata cu succes.");	
+	            					alert("Cartea a fost adaugata cu succes.");
+	            					
+	            					// reload books
+	            					pageNr = $("#current").html();
+	            			    	titlu = $("#input-filter-titlu").val();
+	            			    	autori = $("#input-filter-autori").val();
+	            			    	an = $("#input-filter-an").val();
+	            			    	editura = $("#input-filter-editura").val();
+	            			    	disponibil = $("#input-filter-disponibil").val();
+	            					loadBooks(parseInt(pageNr), titlu, autori, an, editura, disponibil)
+	            					
 	            					$( "#dialog-add-carte").dialog( "close" );
 	            				} else {
 	            					alert("A aparut o eroare la adaugarea cartii.")
@@ -98,7 +111,7 @@ $(function() {
     	);
 		
 		if (drepturi != 2) {
-			// redefine the add book dialog
+			// define the view dialog for other users
 		    $("#dialog-add-carte").dialog({
 		        autoOpen: false,
 		        height: 650,
@@ -115,7 +128,7 @@ $(function() {
 		        }
 		    });
 		} else {
-			// redefine the add book dialog
+			// define the edit dialog for admin
 		    $("#dialog-add-carte").dialog({
 		        autoOpen: false,
 		        height: 650,
@@ -124,8 +137,37 @@ $(function() {
 		        title: "Editeaza informatiile cartii",
 		        buttons: {
 		            "Salveaza": function() {
-		            	alert("carte salvata");
-		            	$( this ).dialog( "close" );
+		            	$.post("/Biblioteca/books/book/" + bookId,
+		            			{
+		            				"add-carte-titlu" : $("#add-carte-titlu").val(),
+		            				"add-carte-autori": $("#add-carte-autori").val(),
+		            				"add-carte-editura" : $("#add-carte-editura").val(),
+		            				"add-carte-an" : $("#add-carte-an").val(),
+		            				"add-carte-loc": $("#add-carte-loc").val(),
+		            				"add-carte-isbn": $("#add-carte-isbn").val(),
+		            				"add-carte-cota" : $("#add-carte-cota").val(),
+		            				"add-carte-durata": $("#add-carte-durata").val(),
+		            				"add-carte-obs" : $("#add-carte-obs").val()
+		            			},
+		            			function (data) {
+		            				if (data == "success") {
+		            					alert("Cartea a fost modificata cu succes.");
+		            			    	
+		            					// reload books
+		            					pageNr = $("#current").html();
+		            			    	titlu = $("#input-filter-titlu").val();
+		            			    	autori = $("#input-filter-autori").val();
+		            			    	an = $("#input-filter-an").val();
+		            			    	editura = $("#input-filter-editura").val();
+		            			    	disponibil = $("#input-filter-disponibil").val();
+		            					loadBooks(parseInt(pageNr), titlu, autori, an, editura, disponibil)
+
+		            					$( "#dialog-add-carte").dialog( "close" );
+		            				} else {
+		            					alert("A aparut o eroare la salvarea cartii.")
+		            				}
+		            			}
+		            	);
 		            },
 		        	Cancel: function() {
 		                $( this ).dialog( "close" );
@@ -139,6 +181,48 @@ $(function() {
 		}
 		
 		$("#dialog-add-carte").dialog("open");
+	});
+	
+	$("#dialog-confirm-delete").dialog({
+		autoOpen: false,
+		resizable: true,
+        height: 300,
+        width: 400,
+        modal: true,
+        buttons: {
+            "Sterge": function() {
+            	$.ajax({
+            		   url: "/Biblioteca/books/book/" + bookId,
+            		   type: 'DELETE',
+            		   }
+            	).always(function(data){
+   					if (data == "success") {
+       					alert("Cartea a fost stearsa cu succes.");
+       			    	
+       					// reload books
+       					pageNr = $("#current").html();
+       			    	titlu = $("#input-filter-titlu").val();
+       			    	autori = $("#input-filter-autori").val();
+       			    	an = $("#input-filter-an").val();
+       			    	editura = $("#input-filter-editura").val();
+       			    	disponibil = $("#input-filter-disponibil").val();
+       					loadBooks(parseInt(pageNr), titlu, autori, an, editura, disponibil)
+
+       					$("#dialog-confirm-delete").dialog( "close" );
+       				} else {
+       					alert("A aparut o eroare la stergerea cartii.")
+       				}            		
+            	});            	
+            },
+            Cancel: function() {
+                $( this ).dialog( "close" );
+            }
+        }
+    });
+	
+	$(".book-delete-img").click(function(){
+		bookId = $(this).parent().parent().attr("id");
+		$("#dialog-confirm-delete").dialog("open");	
 	});
 	
 	// show the add book dialog on click
@@ -264,6 +348,111 @@ $(function() {
     	$(this).children(':nth-child(6)').addClass("book-menu-td-hidden");
     	$(this).children('td:nth-child(6)').addClass("book-menu-td-hidden");
     });
+    
+    //_________________________________________________________________________________________________________//
+    loadUsers();
+    $("#dialog-confirm-delete-user").dialog({
+		autoOpen: false,
+		resizable: true,
+        height: 300,
+        width: 400,
+        modal: true,
+        buttons: {
+            "Sterge": function() {
+            	$.ajax({
+            		   url: "/Biblioteca/users/user/" + userId,
+            		   type: 'DELETE',
+            		   }
+            	).always(function(data){
+   					if (data == "success") {
+       					alert("Utilizatorul a fost sters cu succes.");
+       					// reload users
+       					loadUsers();
+       					$("#dialog-confirm-delete-user").dialog("close");
+       				} else {
+       					alert("A aparut o eroare la stergerea utilizatorului.")
+       				}            		
+            	});            	
+            },
+            Cancel: function() {
+                $( this ).dialog( "close" );
+            }
+        }
+    });
+	
+	$("#delete-user").click(function(){
+		userId = $("#user-drop-down").val();
+		$("#dialog-confirm-delete-user").dialog("open");	
+	});
+	
+	$("#dialog-add-user").dialog({
+        autoOpen: false,
+        height: 450,
+        width: 600,
+        modal: true,
+        title: "Adauga / modifica utilizator",
+        buttons: {
+            "Salveaza": function() {
+            	// add or update
+            	url = "/Biblioteca/users/add";
+            	if (!addUser) {
+            		url = "/Biblioteca/users/user/" + userId;
+            	}
+            	
+            	// TODO: validate inputs 
+            	$.post(url,
+            			{
+            				"add-user-username" : $("#add-user-username").val(),
+            				"add-user-password": $("#add-user-password").val(),
+            				"add-user-nume" : $("#add-user-nume").val(),
+            				"add-user-email" : $("#add-user-email").val(),
+            				"add-user-telefon": $("#add-user-telefon").val(),
+            				"add-user-adresa": $("#add-user-adresa").val(),
+            				"add-user-drepturi" : $("#add-user-drepturi").val()
+            			},
+            			function (data) {
+            				if (data == "success") {
+            					alert("Utilizatorul a fost salvat cu succes.");
+            					
+            					loadUsers();
+            					$( "#dialog-add-user").dialog( "close" );
+            				} else {
+            					alert("A aparut o eroare salvarea utilizatorului.")
+            				}
+            			}
+            	);
+            },
+            Cancel: function() {
+                $( this ).dialog( "close" );
+            }
+        },
+        close: function() {
+        	$("#dialog-add-user > div > [id^=add-user-]").val("");
+        }
+    });
+	
+	$("#add-user").click(function(){
+		addUser = true;
+		$("#dialog-add-user").dialog("open");
+	});
+	
+	$("#edit-user").click(function(){
+		addUser = false;
+		$.get("/Biblioteca/users/user/" + userId,
+    			{},
+    			function (data) {
+    				user = $.parseJSON(data);
+    				$("#add-user-username").val(user.username);
+    				$("#add-user-password").val(user.password);
+    				$("#add-user-nume").val(user.nume);
+    				$("#add-user-email").val(user.email);
+    				$("#add-user-telefon").val(user.telefon);
+    				$("#add-user-adresa").val(user.adresa);
+    				$("#add-user-drepturi").val(user.drepturi);
+    			}
+    	);
+		$("#dialog-add-user").dialog("open");
+	})
 })
 
 function loadBooks(pageNr, titlu, autori, an, editura, disponibil) {
@@ -313,4 +502,33 @@ function loadBooks(pageNr, titlu, autori, an, editura, disponibil) {
 			    }
 			}
 	);
+}
+
+function loadUsers() {
+	drepturi = $("#drepturi-user").val();
+    if (drepturi >=1) {
+    	$.get("/Biblioteca/users/get/all",
+    			{},
+    			function(data) {
+    				users = $.parseJSON(data);
+    				$("#user-drop-down").html("");
+    				
+    				optionClass="";
+    			    $.each(users, function(index, user){
+    			    	optionClass="";
+    			    	if (user.drepturi == 2) {
+    			    		optionClass = "admin-font";
+    			    	} else if (user.drepturi == 1) {
+    			    		optionClass = "bibliotecar-font";
+    			    	}
+    			    	
+    			    	optionClass = " class='" + optionClass + "' ";
+    			    	$("#user-drop-down").append("<option " + optionClass + " value='" + user.idUser + "'>"+ user.nume +"</option>");
+    			     });
+    			})
+    }
+    
+    $("#user-drop-down").change(function(){
+    	userId = $(this).val();
+    });
 }

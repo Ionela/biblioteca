@@ -3,6 +3,8 @@
  */
 package ro.ubbcluj.cs.Biblioteca.services;
 
+import java.util.List;
+
 import ro.ubbcluj.cs.Biblioteca.model.User;
 
 /**
@@ -11,5 +13,15 @@ import ro.ubbcluj.cs.Biblioteca.model.User;
  */
 public interface IUserService {
 
-	public User logIn(String username, String password);
+	User logIn(String username, String password);
+	
+	List<User> getAllUsers();
+	
+	User getUserById(String id);
+	
+	void deleteUser(User user);
+	
+	void addUser(User user);
+	
+	void updateUser(User user);
 }

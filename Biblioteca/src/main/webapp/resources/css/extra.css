@@ -70,3 +70,28 @@
 .shead-autori{
 	width: 200px;
 }
+
+#user-drop-down{
+	width: 250px;
+	float: left;
+}
+
+.user-menu-img{
+	float:left;
+	margin-left:5px;
+	cursor: pointer;
+}
+
+.admin-font{
+	font-weight: bold;
+	color: red;
+}
+
+.bibliotecar-font{
+	font-style:italic;
+	color: blue;
+}
+
+#add-user{
+	width: 24px;
+}

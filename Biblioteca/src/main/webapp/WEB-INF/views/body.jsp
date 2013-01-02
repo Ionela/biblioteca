@@ -59,7 +59,7 @@
 					<td class="book-menu book-menu-td-hidden">
 						<img id="book-details" class="book-menu-img book-details-img" alt="Detalii" title="Detalii" src="<c:url value='/resources/img/edit.png'/>">
 						<c:if test="${user.drepturi == 2}">
-							<img id="book-delete" class="book-menu-img" alt="Sterge" title="Sterge cartea" src="<c:url value='/resources/img/delete.png'/>" />
+							<img id="book-delete" class="book-menu-img book-delete-img" alt="Sterge" title="Sterge cartea" src="<c:url value='/resources/img/delete.png'/>" />
 						</c:if>
 						
 						<c:if test="${user.drepturi == 1}">
@@ -76,7 +76,7 @@
 					<td class="book-menu book-menu-td-hidden">
 						<img id="book-details" class="book-menu-img book-details-img" alt="Detalii" title="Detalii" src="<c:url value='/resources/img/edit.png'/>" />
 						<c:if test="${user.drepturi == 2}">
-							<img id="book-delete" class="book-menu-img" alt="Sterge" title="Sterge cartea" src="<c:url value='/resources/img/delete.png'/>" />
+							<img id="book-delete" class="book-menu-img book-delete-img" alt="Sterge" title="Sterge cartea" src="<c:url value='/resources/img/delete.png'/>" />
 						</c:if>
 						
 						<c:if test="${user.drepturi == 1}">
@@ -93,7 +93,7 @@
 					<td class="book-menu book-menu-td-hidden">
 						<img id="book-details" class="book-menu-img book-details-img" alt="Detalii" title="Detalii" src="<c:url value='/resources/img/edit.png'/>" />
 						<c:if test="${user.drepturi == 2}">
-							<img id="book-delete" class="book-menu-img" alt="Sterge" title="Sterge cartea" src="<c:url value='/resources/img/delete.png'/>" />
+							<img id="book-delete" class="book-menu-img book-delete-img" alt="Sterge" title="Sterge cartea" src="<c:url value='/resources/img/delete.png'/>" />
 						</c:if>
 						
 						<c:if test="${user.drepturi == 1}">
@@ -110,7 +110,7 @@
 					<td class="book-menu book-menu-td-hidden">
 						<img id="book-details" class="book-menu-img book-details-img" alt="Detalii" title="Detalii" src="<c:url value='/resources/img/edit.png'/>" />
 						<c:if test="${user.drepturi == 2}">
-							<img id="book-delete" class="book-menu-img" alt="Sterge" title="Sterge cartea" src="<c:url value='/resources/img/delete.png'/>" />
+							<img id="book-delete" class="book-menu-img book-delete-img" alt="Sterge" title="Sterge cartea" src="<c:url value='/resources/img/delete.png'/>" />
 						</c:if>
 						
 						<c:if test="${user.drepturi == 1}">
@@ -127,7 +127,7 @@
 					<td class="book-menu book-menu-td-hidden">
 						<img id="book-details" class="book-menu-img book-details-img" alt="Detalii" title="Detalii" src="<c:url value='/resources/img/edit.png'/>" />
 						<c:if test="${user.drepturi == 2}">
-							<img id="book-delete" class="book-menu-img" alt="Sterge" title="Sterge cartea" src="<c:url value='/resources/img/delete.png'/>" />
+							<img id="book-delete" class="book-menu-img book-delete-img" alt="Sterge" title="Sterge cartea" src="<c:url value='/resources/img/delete.png'/>" />
 						</c:if>
 						
 						<c:if test="${user.drepturi == 1}">
@@ -144,7 +144,7 @@
 					<td class="book-menu book-menu-td-hidden">
 						<img id="book-details" class="book-menu-img book-details-img" alt="Detalii" title="Detalii" src="<c:url value='/resources/img/edit.png'/>" />
 						<c:if test="${user.drepturi == 2}">
-							<img id="book-delete" class="book-menu-img" alt="Sterge" title="Sterge cartea" src="<c:url value='/resources/img/delete.png'/>" />
+							<img id="book-delete" class="book-menu-img book-delete-img" alt="Sterge" title="Sterge cartea" src="<c:url value='/resources/img/delete.png'/>" />
 						</c:if>
 						
 						<c:if test="${user.drepturi == 1}">
@@ -161,7 +161,7 @@
 					<td class="book-menu book-menu-td-hidden">
 						<img id="book-details" class="book-menu-img book-details-img" alt="Detalii" title="Detalii" src="<c:url value='/resources/img/edit.png'/>" />
 						<c:if test="${user.drepturi == 2}">
-							<img id="book-delete" class="book-menu-img" alt="Sterge" title="Sterge cartea" src="<c:url value='/resources/img/delete.png'/>" />
+							<img id="book-delete" class="book-menu-img book-delete-img" alt="Sterge" title="Sterge cartea" src="<c:url value='/resources/img/delete.png'/>" />
 						</c:if>
 						
 						<c:if test="${user.drepturi == 1}">
@@ -178,7 +178,7 @@
 					<td class="book-menu book-menu-td-hidden">
 						<img id="book-details" class="book-menu-img book-details-img" alt="Detalii" title="Detalii" src="<c:url value='/resources/img/edit.png'/>" />
 						<c:if test="${user.drepturi == 2}">
-							<img id="book-delete" class="book-menu-img" alt="Sterge" title="Sterge cartea" src="<c:url value='/resources/img/delete.png'/>" />
+							<img id="book-delete" class="book-menu-img book-delete-img" alt="Sterge" title="Sterge cartea" src="<c:url value='/resources/img/delete.png'/>" />
 						</c:if>
 						
 						<c:if test="${user.drepturi == 1}">
@@ -195,7 +195,7 @@
 					<td class="book-menu book-menu-td-hidden">
 						<img id="book-details" class="book-menu-img book-details-img" alt="Detalii" title="Detalii" src="<c:url value='/resources/img/edit.png'/>" />
 						<c:if test="${user.drepturi == 2}">
-							<img id="book-delete" class="book-menu-img" alt="Sterge" title="Sterge cartea" src="<c:url value='/resources/img/delete.png'/>" />
+							<img id="book-delete" class="book-menu-img book-delete-img" alt="Sterge" title="Sterge cartea" src="<c:url value='/resources/img/delete.png'/>" />
 						</c:if>
 						
 						<c:if test="${user.drepturi == 1}">
@@ -212,7 +212,7 @@
 					<td class="book-menu book-menu-td-hidden">
 						<img id="book-details" class="book-menu-img book-details-img" alt="Detalii" title="Detalii" src="<c:url value='/resources/img/edit.png'/>" />
 						<c:if test="${user.drepturi == 2}">
-							<img id="book-delete" class="book-menu-img" alt="Sterge" title="Sterge cartea" src="<c:url value='/resources/img/delete.png'/>" />
+							<img id="book-delete" class="book-menu-img book-delete-img" alt="Sterge" title="Sterge cartea" src="<c:url value='/resources/img/delete.png'/>" />
 						</c:if>
 						
 						<c:if test="${user.drepturi == 1}">
@@ -298,4 +298,8 @@
 			<input type="file" id="books-file" name="books-file"/>
 		</div>
 	</form>
+</div>
+
+<div id="dialog-confirm-delete" title="Stergeti aceasta carte?">
+    <p><span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>Cartea va fi stearsa definitiv. Toate imprumuturile si rezervarile acestei carti se vor pierde. Sunteti sigur ca vreti sa stergeti cartea?</p>
 </div>

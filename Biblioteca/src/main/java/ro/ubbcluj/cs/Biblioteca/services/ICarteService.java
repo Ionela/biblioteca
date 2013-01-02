@@ -30,4 +30,17 @@ public interface ICarteService {
 	 * @return
 	 */
 	public Carte getCarteById(String id);
+	
+	/**
+	 * 
+	 * @param carte
+	 * @return
+	 */
+	public Carte updateCarte(Carte carte);
+	
+	/**
+	 * 
+	 * @param carte
+	 */
+	public void deleteCarte(Carte carte);
 }

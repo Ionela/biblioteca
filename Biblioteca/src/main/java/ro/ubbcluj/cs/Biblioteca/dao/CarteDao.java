@@ -15,6 +15,18 @@ public interface CarteDao {
 	
 	/**
 	 * 
+	 * @param carte
+	 */
+	public void updateCarte(Carte carte);
+	
+	/**
+	 * 
+	 * @param carte
+	 */
+	public void deleteCarte(Carte carte);
+	
+	/**
+	 * 
 	 * @param cota
 	 */
 	public Carte getCarteByCota(String cota);

@@ -20,7 +20,9 @@
 				</select>
 				
 				<c:if test="${user.drepturi == 2}">
-					<!-- TODO: Administrator -> butoare pentru CRUD user -->
+					<img class="user-menu-img" id="edit-user" title="Modifica informatiile" src="<c:url value='/resources/img/edit.png'/>">
+					<img class="user-menu-img" id="add-user" title="Adauga user nou" src="<c:url value='/resources/img/add_user.png'/>">
+					<img class="user-menu-img" id="delete-user" title="Sterge user-ul selectat" src="<c:url value='/resources/img/delete.png'/>">
 				</c:if>
 			</div>
 		</c:if>
@@ -109,4 +111,41 @@
 			</table>
 		</div>
 	</div>
+</div>
+
+<div id="dialog-confirm-delete-user" title="Stergeti acest utilizator?">
+    <p><span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>Utilizatorul selectat va fi sters definitiv. Toate imprumuturile si rezervarile sale vor fi anulate. Continuati?</p>
+</div>
+
+<div id="dialog-add-user">
+	<!-- form id="add-carte-form" method="POST" action="/Biblioteca/books/add"-->
+		<div class="line-add-carte">
+			<div class="eticheta-add-carte">Username:</div>
+			<input type="text" id="add-user-username" class="input-add-carte" name="add-user-username"/>
+		</div>
+		<div class="line-add-carte">
+			<div class="eticheta-add-carte">Parola:</div>
+			<input type="text" id="add-user-password" class="input-add-carte" name="add-user-password"/>
+		</div>
+		<div class="line-add-carte">
+			<div class="eticheta-add-carte">Nume complet</div>
+			<input type="text" id="add-user-nume" class="input-add-carte" name="add-user-nume"/>
+		</div>
+		<div class="line-add-carte">
+			<div class="eticheta-add-carte">E-mail</div>
+			<input type="text" id="add-user-email" class="input-add-carte" name="add-user-email"/>
+		</div>
+		<div class="line-add-carte">
+			<div class="eticheta-add-carte">Telefon</div>
+			<input type="text" id="add-user-telefon" class="input-add-carte" name="add-user-telefon"/>
+		</div>
+		<div class="line-add-carte">
+			<div class="eticheta-add-carte">Adresa</div>
+			<input type="text" id="add-user-adresa" class="input-add-carte" name="add-user-adresa"/>
+		</div>
+		<div class="line-add-carte">
+			<div class="eticheta-add-carte">Drepturi</div>
+			<input type="text" id="add-user-drepturi" class="input-add-carte" name="add-user-drepturi"/>
+		</div>
+	<!-- /form-->
 </div>
