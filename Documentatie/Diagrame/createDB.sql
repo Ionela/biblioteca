@@ -52,13 +52,15 @@ DROP TABLE IF EXISTS `biblioteca`.`Imprumuturi` ;
 
 CREATE  TABLE IF NOT EXISTS `biblioteca`.`Imprumuturi` (
   `idImprumut` INT NOT NULL AUTO_INCREMENT ,
-  `idCarte` INT NULL ,
-  `idUser` INT NULL ,
+  `idCarte` INT NOT NULL ,
+  `idUser` INT NOT NULL ,
   `dinData` DATE NULL ,
-  `paInData` DATE NULL ,
+  `panaInData` DATE NULL ,
+  `Imprumuturicol` VARCHAR(45) NULL ,
   PRIMARY KEY (`idImprumut`) ,
   INDEX `FK_imprumuturi_carti_idx` (`idCarte` ASC) ,
   INDEX `FK_imprumuturi_useri_idx` (`idUser` ASC) ,
+  UNIQUE INDEX `idCarte_UNIQUE` (`idCarte` ASC) ,
   CONSTRAINT `FK_imprumuturi_carti`
     FOREIGN KEY (`idCarte` )
     REFERENCES `biblioteca`.`Carti` (`idCarte` )
