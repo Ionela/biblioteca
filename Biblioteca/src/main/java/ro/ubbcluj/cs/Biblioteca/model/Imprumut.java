@@ -1,19 +1,25 @@
 package ro.ubbcluj.cs.Biblioteca.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Imprumut {
+public class Imprumut implements Serializable{
 	private int idImprumut;
 	private Carte carte;
 	private User user;
 	private Date dinData;
 	private Date panaInData;
 	
-	public Imprumut(int idImprumut, Carte carte, User user, Date dinData) {
+	public Imprumut(int idImprumut, Carte carte, User user, Date dinData, Date panaInData) {
 		this.idImprumut = idImprumut;
 		this.carte = carte;
 		this.user = user;
 		this.dinData = dinData;
+		this.panaInData = panaInData;
+	}
+	
+	public Imprumut() {
+		super();
 	}
 
 	public int getIdImprumut() {

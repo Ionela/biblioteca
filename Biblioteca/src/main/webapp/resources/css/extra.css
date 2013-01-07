@@ -63,12 +63,20 @@
 	padding-left: 10px;
 }
 
-.shead-titlu{
-	width: 200px;
+#tabel-imprumuturi{
+	width: 564
 }
 
-.shead-autori{
-	width: 200px;
+.head-titlu{
+	width: 250px;
+}
+
+.head-autori{
+	width: 250px;
+}
+
+.head-data{
+	width: 60px;
 }
 
 #user-drop-down{

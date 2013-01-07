@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="ro.ubbcluj.cs.Biblioteca.model.Imprumut" table="Imprumuturi">
+        <id name="idImprumut" type="int">
+            <column name="idImprumut" precision="5" scale="0" />
+            <generator class="assigned" />
+        </id>
+        
+        <property name="dinData" type="date">
+            <column name="dinData" sql-type="date"/>
+        </property>
+        
+        <property name="panaInData" type="date">
+            <column name="panaInData" sql-type="date"/>
+        </property>
+
+		<many-to-one name="user" class="ro.ubbcluj.cs.Biblioteca.model.User" fetch="join" lazy="false">
+			<column name="idUser" not-null="true" />
+		</many-to-one>
+		
+		<many-to-one name="carte" column="idCarte" class="ro.ubbcluj.cs.Biblioteca.model.Carte" unique="true" cascade="all" lazy="false" fetch="join"/>
+    </class>
+</hibernate-mapping>

@@ -37,8 +37,8 @@
 				<thead>
 					<tr>
 						<th class="head-titlu">Titlu</th>
-						<th class="head-autori">Autori</th>
-						<th>Data retur</th>
+						<th class="head-autori">Autori</th> 
+						<th class="head-data">Data retur</th>
 					</tr>
 				</thead>
 				<tbody>

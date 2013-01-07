@@ -2,6 +2,7 @@
 
 <div id="body">
 	<input type="hidden" id="drepturi-user" value="${user.drepturi}"/>
+	<input type="hidden" id="crt-user-id" value="${user.idUser}"/>
 
 	<div id="export-pdf">
 		<c:if test="${user.drepturi == 2}">
@@ -63,7 +64,7 @@
 						</c:if>
 						
 						<c:if test="${user.drepturi == 1}">
-							<img id="book-lend" class="book-menu-img" alt="Imprumuta" title="Imprumuta" src="<c:url value='/resources/img/lend.png'/>" />
+							<img id="book-lend" class="book-menu-img book-lend-img" alt="Imprumuta" title="Imprumuta" src="<c:url value='/resources/img/lend.png'/>" />
 						</c:if>
 					</td>
 				</tr>
@@ -80,7 +81,7 @@
 						</c:if>
 						
 						<c:if test="${user.drepturi == 1}">
-							<img id="book-lend" class="book-menu-img" alt="Imprumuta" title="Imprumuta" src="<c:url value='/resources/img/lend.png'/>" />
+							<img id="book-lend" class="book-menu-img book-lend-img" alt="Imprumuta" title="Imprumuta" src="<c:url value='/resources/img/lend.png'/>" />
 						</c:if>
 					</td>
 				</tr>
@@ -97,7 +98,7 @@
 						</c:if>
 						
 						<c:if test="${user.drepturi == 1}">
-							<img id="book-lend" class="book-menu-img" alt="Imprumuta" title="Imprumuta" src="<c:url value='/resources/img/lend.png'/>" />
+							<img id="book-lend" class="book-menu-img book-lend-img" alt="Imprumuta" title="Imprumuta" src="<c:url value='/resources/img/lend.png'/>" />
 						</c:if>
 					</td>
 				</tr>
@@ -114,7 +115,7 @@
 						</c:if>
 						
 						<c:if test="${user.drepturi == 1}">
-							<img id="book-lend" class="book-menu-img" alt="Imprumuta" title="Imprumuta" src="<c:url value='/resources/img/lend.png'/>" />
+							<img id="book-lend" class="book-menu-img book-lend-img" alt="Imprumuta" title="Imprumuta" src="<c:url value='/resources/img/lend.png'/>" />
 						</c:if>
 					</td>
 				</tr>
@@ -131,7 +132,7 @@
 						</c:if>
 						
 						<c:if test="${user.drepturi == 1}">
-							<img id="book-lend" class="book-menu-img" alt="Imprumuta" title="Imprumuta" src="<c:url value='/resources/img/lend.png'/>" />
+							<img id="book-lend" class="book-menu-img book-lend-img" alt="Imprumuta" title="Imprumuta" src="<c:url value='/resources/img/lend.png'/>" />
 						</c:if>
 					</td>
 				</tr>
@@ -148,7 +149,7 @@
 						</c:if>
 						
 						<c:if test="${user.drepturi == 1}">
-							<img id="book-lend" class="book-menu-img" alt="Imprumuta" title="Imprumuta" src="<c:url value='/resources/img/lend.png'/>" />
+							<img id="book-lend" class="book-menu-img book-lend-img" alt="Imprumuta" title="Imprumuta" src="<c:url value='/resources/img/lend.png'/>" />
 						</c:if>
 					</td>
 				</tr>
@@ -165,7 +166,7 @@
 						</c:if>
 						
 						<c:if test="${user.drepturi == 1}">
-							<img id="book-lend" class="book-menu-img" alt="Imprumuta" title="Imprumuta" src="<c:url value='/resources/img/lend.png'/>" />
+							<img id="book-lend" class="book-menu-img book-lend-img" alt="Imprumuta" title="Imprumuta" src="<c:url value='/resources/img/lend.png'/>" />
 						</c:if>
 					</td>
 				</tr>
@@ -182,7 +183,7 @@
 						</c:if>
 						
 						<c:if test="${user.drepturi == 1}">
-							<img id="book-lend" class="book-menu-img" alt="Imprumuta" title="Imprumuta" src="<c:url value='/resources/img/lend.png'/>" />
+							<img id="book-lend" class="book-menu-img book-lend-img" alt="Imprumuta" title="Imprumuta" src="<c:url value='/resources/img/lend.png'/>" />
 						</c:if>
 					</td>
 				</tr>
@@ -199,7 +200,7 @@
 						</c:if>
 						
 						<c:if test="${user.drepturi == 1}">
-							<img id="book-lend" class="book-menu-img" alt="Imprumuta" title="Imprumuta" src="<c:url value='/resources/img/lend.png'/>" />
+							<img id="book-lend" class="book-menu-img book-lend-img" alt="Imprumuta" title="Imprumuta" src="<c:url value='/resources/img/lend.png'/>" />
 						</c:if>
 					</td>
 				</tr>
@@ -216,7 +217,7 @@
 						</c:if>
 						
 						<c:if test="${user.drepturi == 1}">
-							<img id="book-lend" class="book-menu-img" alt="Imprumuta" title="Imprumuta" src="<c:url value='/resources/img/lend.png'/>" />
+							<img id="book-lend" class="book-menu-img book-lend-img" alt="Imprumuta" title="Imprumuta" src="<c:url value='/resources/img/lend.png'/>" />
 						</c:if>
 					</td>
 				</tr>
@@ -303,3 +304,16 @@
 <div id="dialog-confirm-delete" title="Stergeti aceasta carte?">
     <p><span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>Cartea va fi stearsa definitiv. Toate imprumuturile si rezervarile acestei carti se vor pierde. Sunteti sigur ca vreti sa stergeti cartea?</p>
 </div>
+
+<div id="dialog-add-imprumut" title="Imprumutati cartea">
+	<div class="line-add-carte">
+		<div class="eticheta-add-carte">Selectati utilizatorul:</div>
+		<select id="user-drop-down-imprumut">
+			<option value="usedId1">User name 1</option>
+		  	<option value="usedId2">User name 2</option>
+		  	<option value="usedId3">User name 3</option>
+		  	<option value="usedId4">User name 4</option>
+		</select>
+	</div>
+</div>
+

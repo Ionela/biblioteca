@@ -35,5 +35,12 @@
         <property name="drepturi" type="int">
             <column name="drepturi" default="0"/>
         </property>
+        
+        <bag name="cartiImprumutate" table="imprumuturi" lazy="false" fetch="join" >
+        	<key>
+        		<column name="idImprumut" not-null="true" />
+        	</key>
+        	<one-to-many class="ro.ubbcluj.cs.Biblioteca.model.Imprumut"/>
+        </bag>
     </class>
 </hibernate-mapping>

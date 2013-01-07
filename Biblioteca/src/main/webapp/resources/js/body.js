@@ -86,7 +86,7 @@ $(function() {
 	$(".book-details-img").click(function(){
 		drepturi = $("#drepturi-user").val();
 		bookId = $(this).parent().parent().attr("id");
-		if (drepturi != 2){
+		if (drepturi != "2"){
 			$(".input-add-carte").attr("disabled", "disabled");
 			$("#add-carte-obs").attr("disabled", "disabled");
 		} else {
@@ -110,7 +110,7 @@ $(function() {
     			}
     	);
 		
-		if (drepturi != 2) {
+		if (drepturi != "2") {
 			// define the view dialog for other users
 		    $("#dialog-add-carte").dialog({
 		        autoOpen: false,
@@ -350,7 +350,7 @@ $(function() {
     });
     
     //_________________________________________________________________________________________________________//
-    loadUsers();
+    loadUsers("user-drop-down");
     $("#dialog-confirm-delete-user").dialog({
 		autoOpen: false,
 		resizable: true,
@@ -367,7 +367,7 @@ $(function() {
    					if (data == "success") {
        					alert("Utilizatorul a fost sters cu succes.");
        					// reload users
-       					loadUsers();
+       					loadUsers("user-drop-down");
        					$("#dialog-confirm-delete-user").dialog("close");
        				} else {
        					alert("A aparut o eroare la stergerea utilizatorului.")
@@ -414,7 +414,7 @@ $(function() {
             				if (data == "success") {
             					alert("Utilizatorul a fost salvat cu succes.");
             					
-            					loadUsers();
+            					loadUsers("user-drop-down");
             					$( "#dialog-add-user").dialog( "close" );
             				} else {
             					alert("A aparut o eroare salvarea utilizatorului.")
@@ -452,7 +452,58 @@ $(function() {
     			}
     	);
 		$("#dialog-add-user").dialog("open");
-	})
+	});
+	
+	$("#user-drop-down").change(function(){
+		userId = $(this).val();
+		loadImprumuturi(userId);
+	});
+	
+	//____________________________________IMPRUMUTURI_______________________________________//
+	
+	drepturi = $("#drepturi-user").val();
+	if (drepturi == "0") {
+		userId = $("#crt-user-id").val();
+		loadImprumuturi(userId);
+	}
+	
+	$(".book-lend-img").click(function() {
+		bookId = $(this).parent().parent().attr("id");
+		loadUsers("user-drop-down-imprumut");
+		$("#dialog-add-imprumut").dialog("open");
+		
+	});
+	
+	$("#dialog-add-imprumut").dialog({
+        autoOpen: false,
+        height: 350,
+        width: 600,
+        modal: true,
+        buttons: {
+            "Imprumuta": function() {
+            	// TODO: validate inputs 
+            	selectedUserId = $("#user-drop-down-imprumut").val();
+            	$.post("/Biblioteca/users/" + selectedUserId + "/imprumuturi/add",
+            			{
+            				"book-id" : bookId
+            			},
+            			function (data) {
+            				if (data == "success") {
+            					alert("Cartea a fost imprumutata");
+            					$( "#dialog-add-imprumut").dialog( "close" );
+            				} else {
+            					alert("A aparut o eroare imprumutul cartii.")
+            				}
+            			}
+            	);
+            },
+            Cancel: function() {
+                $( this ).dialog( "close" );
+            }
+        },
+        close: function() {
+        }
+    });
 })
 
 function loadBooks(pageNr, titlu, autori, an, editura, disponibil) {
@@ -504,14 +555,34 @@ function loadBooks(pageNr, titlu, autori, an, editura, disponibil) {
 	);
 }
 
-function loadUsers() {
+function loadImprumuturi(userId) {
+	drepturi = $("#drepturi-user").val();
+	if (drepturi != "" && drepturi >= 0) {
+		$.get("/Biblioteca/users/" + userId + "/imprumuturi",
+    			{},
+    			function(data) {
+    				imprumuturi = $.parseJSON(data);
+    				$("#tabel-imprumuturi>tbody>tr>td").html("");
+    				
+    				// populate the table
+    			    $.each(imprumuturi, function(index, imprumut){
+    			    	$("#tabel-imprumuturi tbody tr:nth-child(" + (index + 1) + ")").attr("id", imprumut.idImprumut);
+    			    	$("#tabel-imprumuturi tbody tr:nth-child(" + (index + 1) + ") td:nth-child("+ 1 + ")").html(imprumut.carte.titlu);
+    			    	$("#tabel-imprumuturi tbody tr:nth-child(" + (index + 1) + ") td:nth-child("+ 2 + ")").html(imprumut.carte.autori);
+    			    	$("#tabel-imprumuturi tbody tr:nth-child(" + (index + 1) + ") td:nth-child("+ 3 + ")").html(imprumut.panaInData);
+    			     });
+    			})
+	}
+}
+
+function loadUsers(selectionListId) {
 	drepturi = $("#drepturi-user").val();
     if (drepturi >=1) {
     	$.get("/Biblioteca/users/get/all",
     			{},
     			function(data) {
     				users = $.parseJSON(data);
-    				$("#user-drop-down").html("");
+    				$("#" + selectionListId).html("");
     				
     				optionClass="";
     			    $.each(users, function(index, user){
@@ -523,7 +594,7 @@ function loadUsers() {
     			    	}
     			    	
     			    	optionClass = " class='" + optionClass + "' ";
-    			    	$("#user-drop-down").append("<option " + optionClass + " value='" + user.idUser + "'>"+ user.nume +"</option>");
+    			    	$("#" + selectionListId).append("<option " + optionClass + " value='" + user.idUser + "'>"+ user.nume +"</option>");
     			     });
     			})
     }
@@ -531,4 +602,6 @@ function loadUsers() {
     $("#user-drop-down").change(function(){
     	userId = $(this).val();
     });
+    
+    $("#user-drop-down").change();
 }

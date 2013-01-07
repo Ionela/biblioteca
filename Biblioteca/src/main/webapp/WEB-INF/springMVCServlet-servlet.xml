@@ -30,6 +30,7 @@
 	<!-- Services -->
 	<bean class="ro.ubbcluj.cs.Biblioteca.services.impl.CarteServiceImpl" />
 	<bean class="ro.ubbcluj.cs.Biblioteca.services.impl.UserServiceImpl" />
+	<bean class="ro.ubbcluj.cs.Biblioteca.services.impl.ImprumutServiceImpl" />
 
 
 	<!-- Hibernate DAO -->
@@ -39,6 +40,7 @@
 			<list>
 				<value>../mapping/User.hbm.xml</value>
 				<value>../mapping/Carte.hbm.xml</value>
+				<value>../mapping/Imprumut.hbm.xml</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
